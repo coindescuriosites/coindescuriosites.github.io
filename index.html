@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Switch Template</title>
+		<link
+			href="https://fonts.googleapis.com/css?family=Heebo:400,700|IBM+Plex+Sans:600"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="dist/css/style.css" />
+		<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+		<!-- Styles CSS -->
+		<style>
+			/* .img-center{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			} */
+			.hero {
+				padding-top: 25px !important;
+			}
+			.color {
+				color: #fe7e1f;
+				text-transform: uppercase;
+				font-style: bold;
+			}
+			.btn-play {
+				align-self: center;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 2;
+			}
+
+			.features-content-wrapper {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.features-wrap {
+				width: 60%;
+			}
+
+			.feature-image-right {
+				width: 40%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			/* Responsive CSS pour les petits écrans */
+			@media (max-width: 768px) {
+				.features-content-wrapper {
+					flex-direction: column;
+					align-items: center;
+				}
+
+				.features-wrap,
+				.feature-image-right {
+					width: 100%; /* Les éléments prennent toute la largeur */
+					margin-bottom: 20px; /* Ajoute de l'espace entre les éléments */
+				}
+			}
+		</style>
+	</head>
+	<body class="is-boxed has-animations">
+		<div class="body-wrap boxed-container">
+			<header class="site-header">
+				<div class="container">
+					<div class="site-header-inner">
+						<div class="brand header-brand">
+							<h1 class="m-0">
+								<a href="#">
+									<img
+										class="header-logo-image asset-light"
+										src="dist/images/logo-light.svg"
+										alt="Logo"
+									/>
+									<img
+										class="header-logo-image asset-dark"
+										src="dist/images/logo-dark.svg"
+										alt="Logo"
+									/>
+								</a>
+							</h1>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<main>
+				<section class="hero">
+					<div class="container">
+						<div class="hero-inner">
+							<div class="hero-copy">
+								<h1 class="hero-title mt-0">
+									Porte-passeport en CUIR PU : Protégez votre
+									passeport avec style
+								</h1>
+								<p class="hero-paragraph">
+									Nos porte-passeports offrent une protection
+									élégante et durable. Pensés pour les voyages
+									exigeants, ils gardent tous vos documents
+									essentiels au même endroit, évitant tout
+									oubli et les désagréments de dernière
+									minute.
+								</p>
+								<p class="hero-paragraph color">
+									Prix : 6000 FRS
+								</p>
+								<div class="hero-cta">
+									<a
+										class="button button-primary"
+										href="https://wa.me/237671595426?text=Bonjour,%20je%20souhaite%20commander%20le%20porte-passeport%20à%206000%20FRS."
+									>
+										Commander
+									</a>
+									<div class="lights-toggle">
+										<input
+											id="lights-toggle"
+											type="checkbox"
+											name="lights-toggle"
+											class="switch"
+											checked="checked"
+										/>
+										<label
+											for="lights-toggle"
+											class="text-xs"
+										>
+											<span>
+												Mode
+												<span class="label-text"
+													>nuit</span
+												>
+											</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="hero-media">
+								<div class="header-illustration">
+									<img
+										class="header-illustration-image asset-light"
+										src="dist/images/header-illustration-light.svg"
+										alt="Header illustration"
+									/>
+									<img
+										class="header-illustration-image asset-dark"
+										src="dist/images/header-illustration-dark.svg"
+										alt="Header illustration"
+									/>
+								</div>
+								<div class="hero-media-illustration">
+									<img
+										class="hero-media-illustration-image asset-light"
+										src="dist/images/hero-media-illustration-light.svg"
+										alt="Hero media illustration"
+									/>
+									<img
+										class="hero-media-illustration-image asset-dark"
+										src="dist/images/hero-media-illustration-dark.svg"
+										alt="Hero media illustration"
+									/>
+								</div>
+								<div class="hero-media-container">
+									<img
+										id="play-btn"
+										class="btn-play"
+										src="dist/images/bouton-jouer.png"
+										width="50px"
+										alt="Bouton Play"
+										onclick="OpenVideo()"
+									/>
+									<img
+										class="hero-media-image asset-light img-center"
+										src="dist/images/hero-media-light-3.svg"
+										alt="Hero media"
+									/>
+									<img
+										class="hero-media-image asset-dark img-center"
+										src="dist/images/hero-media-dark-3.svg"
+										alt="Hero media"
+									/>
+									<video
+										id="video"
+										src="dist/video/rfid-passport.mp4"
+										width="538"
+										height="380"
+										style="display: none"
+										controls
+									></video>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="features section">
+					<div class="container">
+						<div
+							class="features-inner section-inner has-bottom-divider"
+						>
+							<div class="features-header text-center">
+								<div class="container-sm">
+									<h2 class="section-title mt-0">
+										Porte-passeport : Travel Wallet
+									</h2>
+									<p class="section-paragraph">
+										Découvrez nos portefeuilles en cuir PU,
+										conçus pour offrir élégance et praticité
+										au quotidien. Avec un design moderne et
+										une organisation bien pensée, chaque
+										portefeuille répond aux besoins de ceux
+										qui recherchent style et fonctionnalité.
+									</p>
+									<div class="features-image">
+										<img
+											class="features-illustration asset-dark"
+											src="dist/images/features-illustration-dark.svg"
+											alt="Feature illustration"
+										/>
+										<img
+											class="features-box asset-dark"
+											src="dist/images/features-box-dark.svg"
+											alt="Feature box"
+										/>
+										<img
+											class="features-illustration asset-dark"
+											src="dist/images/features-illustration-top-dark.svg"
+											alt="Feature illustration top"
+										/>
+										<img
+											class="features-illustration asset-light"
+											src="dist/images/features-illustration-light.svg"
+											alt="Feature illustration"
+										/>
+										<img
+											class="features-box asset-light"
+											src="dist/images/features-box-light.svg"
+											alt="Feature box"
+										/>
+										<img
+											class="features-illustration asset-light"
+											src="dist/images/features-illustration-top-light.svg"
+											alt="Feature illustration top"
+										/>
+									</div>
+								</div>
+							</div>
+							<div class="features-content-wrapper">
+								<div class="features-wrap">
+									<div class="feature is-revealing">
+										<div class="feature-inner">
+											<div class="feature-icon">
+												<img
+													class="asset-light"
+													src="dist/images/feature-01-light.svg"
+													alt="Feature 01"
+												/>
+												<img
+													class="asset-dark"
+													src="dist/images/feature-01-dark.svg"
+													alt="Feature 01"
+												/>
+											</div>
+											<div class="feature-content">
+												<h3 class="feature-title mt-0">
+													Découvrez la qualité du cuir
+													PU
+												</h3>
+												<p class="text-sm mb-0">
+													Nos portefeuilles en cuir PU
+													offrent une finition
+													élégante et durable,
+													résistante aux rayures et
+													aux éclaboussures. Vous
+													aurez un accessoire qui
+													garde son éclat au fil du
+													temps.
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="feature is-revealing">
+										<div class="feature-inner">
+											<div class="feature-icon">
+												<img
+													class="asset-light"
+													src="dist/images/feature-02-light.svg"
+													alt="Feature 02"
+												/>
+												<img
+													class="asset-dark"
+													src="dist/images/feature-02-dark.svg"
+													alt="Feature 02"
+												/>
+											</div>
+											<div class="feature-content">
+												<h3 class="feature-title mt-0">
+													Organisation optimisée
+												</h3>
+												<p class="text-sm mb-0">
+													Avec plusieurs compartiments
+													bien pensés, chaque carte,
+													billet ou pièce trouve
+													facilement sa place. Ne
+													perdez plus de temps à
+													chercher — tout est
+													accessible en un clin d'œil.
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="feature is-revealing">
+										<div class="feature-inner">
+											<div class="feature-icon">
+												<img
+													class="asset-light"
+													src="dist/images/feature-03-light.svg"
+													alt="Feature 03"
+												/>
+												<img
+													class="asset-dark"
+													src="dist/images/feature-03-dark.svg"
+													alt="Feature 03"
+												/>
+											</div>
+											<div class="feature-content">
+												<h3 class="feature-title mt-0">
+													Sécurité renforcée
+												</h3>
+												<p class="text-sm mb-0">
+													Nos portefeuilles intègrent
+													une doublure de protection
+													RFID pour protéger vos
+													données contre le vol
+													numérique. Voyagez et faites
+													vos courses en toute
+													tranquillité.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Image on the right -->
+								<div class="feature-image-right">
+									<img
+										src="dist/images/portefeuille2.svg"
+										alt="passeport"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="cta section">
+					<div class="container-sm">
+						<div class="cta-inner section-inner">
+							<div class="cta-header text-center">
+								<h2 class="section-title mt-0">
+									Commandez votre porte-passeport maintenant
+								</h2>
+								<p class="section-paragraph">
+									Offrez à vos documents de voyage un style
+									élégant et une protection optimale avec nos
+									porte-passeports de qualité supérieure.
+									Parfaits pour organiser vos voyages et
+									garder vos papiers en sécurité.
+								</p>
+								<div class="cta-cta">
+									<a
+										class="button button-primary"
+										href="https://wa.me/237671595426?text=J'aimerais%20commander%20un%20porte-passeport"
+										>Commander</a
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+
+			<footer class="site-footer has-top-divider">
+				<div class="container">
+					<div class="site-footer-inner">
+						<div class="brand footer-brand">
+							<a href="#">
+								<img
+									class="asset-light"
+									src="dist/images/logo-light.svg"
+									alt="Logo"
+								/>
+								<img
+									class="asset-dark"
+									src="dist/images/logo-dark.svg"
+									alt="Logo"
+								/>
+							</a>
+						</div>
+						<ul class="footer-links list-reset">
+							<li>
+								<a href="tel:+237671595426">Contact</a>
+							</li>
+							<li>
+								<a href="https://wa.me/237671595426">671595426</a>
+							</li>
+							<li>
+								<a
+									href="https://www.google.com/maps?q=Douala+Bonaberi"
+									>Douala Bonaberi</a
+								>
+							</li>
+						</ul>
+						<ul class="footer-social-links list-reset">
+							<li>
+								<a
+									href="https://web.facebook.com/lecoindescuriosites"
+								>
+									<span class="screen-reader-text"
+										>Facebook</span
+									>
+									<svg
+										width="16"
+										height="16"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M6.023 16L6 9H3V6h3V4c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V6H13l-1 3H9.28v7H6.023z"
+											fill="#FFF"
+										/>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://www.instagram.com/landry.tchatchouang.52/"
+								>
+									<span class="screen-reader-text"
+										>Instagram</span
+									>
+									<svg
+										id="instagram"
+										fill="rgb(255, 255, 255)"
+										version="1.1"
+										xmlns="http://www.w3.org/2000/svg"
+										xmlns:xlink="http://www.w3.org/1999/xlink"
+										x="0px"
+										y="0px"
+										width="16px"
+										height="16px"
+										viewBox="0 0 169.063 169.063"
+										style="
+											enable-background: new 0 0 169.063
+												169.063;
+										"
+										xml:space="preserve"
+									>
+										<g>
+											<path
+												d="M122.406,0H46.654C20.929,0,0,20.93,0,46.655v75.752c0,25.726,20.929,46.655,46.654,46.655h75.752
+                          c25.727,0,46.656-20.93,46.656-46.655V46.655C169.063,20.93,148.133,0,122.406,0z M154.063,122.407
+                          c0,17.455-14.201,31.655-31.656,31.655H46.654C29.2,154.063,15,139.862,15,122.407V46.655C15,29.201,29.2,15,46.654,15h75.752
+                          c17.455,0,31.656,14.201,31.656,31.655V122.407z"
+											/>
+											<path
+												d="M84.531,40.97c-24.021,0-43.563,19.542-43.563,43.563c0,24.02,19.542,43.561,43.563,43.561s43.563-19.541,43.563-43.561
+                          C128.094,60.512,108.552,40.97,84.531,40.97z M84.531,113.093c-15.749,0-28.563-12.812-28.563-28.561
+                          c0-15.75,12.813-28.563,28.563-28.563s28.563,12.813,28.563,28.563C113.094,100.281,100.28,113.093,84.531,113.093z"
+											/>
+											<path
+												d="M129.921,28.251c-2.89,0-5.729,1.17-7.77,3.22c-2.051,2.04-3.23,4.88-3.23,7.78c0,2.891,1.18,5.73,3.23,7.78
+                          c2.04,2.04,4.88,3.22,7.77,3.22c2.9,0,5.73-1.18,7.78-3.22c2.05-2.05,3.22-4.89,3.22-7.78c0-2.9-1.17-5.74-3.22-7.78
+                          C135.661,29.421,132.821,28.251,129.921,28.251z"
+											/>
+										</g>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="mailto:joelyves01@gmail.com">
+									<span class="screen-reader-text"
+										>Google</span
+									>
+									<svg
+										width="16"
+										height="16"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z"
+											fill="#FFF"
+										/>
+									</svg>
+								</a>
+							</li>
+						</ul>
+						<div class="footer-copyright">
+							&copy; 2024 Coin des curiosités, all rights reserved
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<script src="dist/js/main.min.js"></script>
+		<!-- Script JavaScript pour gérer la vidéo -->
+
+		<!-- Script JavaScript pour gérer la vidéo -->
+		<script>
+			function OpenVideo() {
+				console.log("bonjour");
+				elements = document.getElementsByClassName("hero-media-image");
+				for (let i = 0; i < elements.length; i++) {
+					elements[i].style.display = "none";
+				}
+				document.getElementById("play-btn").style.display = "none";
+				video = document.getElementById("video");
+				video.style.display = "";
+				video.autoplay = true;
+				video.load();
+			}
+		</script>
+	</body>
+</html>
